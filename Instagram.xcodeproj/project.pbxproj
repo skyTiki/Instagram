@@ -13,6 +13,11 @@
 		A197262C2626D307008E1908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A197262A2626D307008E1908 /* Main.storyboard */; };
 		A197262E2626D309008E1908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A197262D2626D309008E1908 /* Assets.xcassets */; };
 		A19726312626D309008E1908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A197262F2626D309008E1908 /* LaunchScreen.storyboard */; };
+		A197263A2626D9EB008E1908 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19726392626D9EB008E1908 /* LoginViewController.swift */; };
+		A1C8B3032627C63E000F2212 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8B3022627C63E000F2212 /* HomeViewController.swift */; };
+		A1C8B3062627C64C000F2212 /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8B3052627C64C000F2212 /* ImageSelectViewController.swift */; };
+		A1C8B3092627C6CA000F2212 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8B3082627C6CA000F2212 /* PostViewController.swift */; };
+		A1C8B30C2627C6D1000F2212 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8B30B2627C6D1000F2212 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		A197262D2626D309008E1908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A19726302626D309008E1908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A19726322626D309008E1908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19726392626D9EB008E1908 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A1C8B3022627C63E000F2212 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A1C8B3052627C64C000F2212 /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		A1C8B3082627C6CA000F2212 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		A1C8B30B2627C6D1000F2212 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,26 @@
 			children = (
 				A19726242626D307008E1908 /* AppDelegate.swift */,
 				A19726262626D307008E1908 /* SceneDelegate.swift */,
-				A19726282626D307008E1908 /* ViewController.swift */,
+				A1C8B30E2627C6D6000F2212 /* ViewControllers */,
 				A197262A2626D307008E1908 /* Main.storyboard */,
 				A197262D2626D309008E1908 /* Assets.xcassets */,
 				A197262F2626D309008E1908 /* LaunchScreen.storyboard */,
 				A19726322626D309008E1908 /* Info.plist */,
 			);
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		A1C8B30E2627C6D6000F2212 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A19726282626D307008E1908 /* ViewController.swift */,
+				A19726392626D9EB008E1908 /* LoginViewController.swift */,
+				A1C8B3022627C63E000F2212 /* HomeViewController.swift */,
+				A1C8B3052627C64C000F2212 /* ImageSelectViewController.swift */,
+				A1C8B3082627C6CA000F2212 /* PostViewController.swift */,
+				A1C8B30B2627C6D1000F2212 /* SettingViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C8B3062627C64C000F2212 /* ImageSelectViewController.swift in Sources */,
+				A1C8B3032627C63E000F2212 /* HomeViewController.swift in Sources */,
+				A1C8B3092627C6CA000F2212 /* PostViewController.swift in Sources */,
+				A1C8B30C2627C6D1000F2212 /* SettingViewController.swift in Sources */,
+				A197263A2626D9EB008E1908 /* LoginViewController.swift in Sources */,
 				A19726292626D307008E1908 /* ViewController.swift in Sources */,
 				A19726252626D307008E1908 /* AppDelegate.swift in Sources */,
 				A19726272626D307008E1908 /* SceneDelegate.swift in Sources */,
@@ -289,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CYWJ8XR6PA;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CYWJ8XR6PA;
 				INFOPLIST_FILE = Instagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
