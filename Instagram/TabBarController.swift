@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
@@ -19,6 +20,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // ログインされていなければ、ログイン画面を表示する
+        if Auth.auth().currentUser == nil {
+            let loginVC = storyboard?.instantiateViewController(identifier: "Login")
+            present(loginVC!, animated: true, completion: nil)
+        }
+    }
+    
     // タブがタップされた時に画面切り替えをするかどうか判定する
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         // カメラアイコンタップ時は独自にモーダル遷移させる
@@ -30,5 +41,4 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             return true
         }
     }
-
 }
