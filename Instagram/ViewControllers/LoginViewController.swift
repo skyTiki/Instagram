@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
     
@@ -26,12 +27,15 @@ class LoginViewController: UIViewController {
             // 空文字判定
             if email.isEmpty || passwoerd.isEmpty { print("入力値に空の項目もくがありました。"); return }
             
+            SVProgressHUD.show()
+            
             // サインイン（Firebase）
             Auth.auth().signIn(withEmail: email, password: passwoerd) { (authDataResult, error) in
                 
                 // エラー有無の判定
                 if let error = error { print("ログインでエラーが発生しました。", error.localizedDescription); return }
                 
+                SVProgressHUD.dismiss()
                 // エラーがなければ問題ないため画面閉じる
                 self.dismiss(animated: true, completion: nil)
             }
@@ -44,6 +48,8 @@ class LoginViewController: UIViewController {
             
             // 空文字かどうか判定
             if email.isEmpty || password.isEmpty || displayName.isEmpty { print("入力テキストに空文字がありました"); return }
+            
+            SVProgressHUD.show()
             
             // アカウント作成(FirebaseのCreateメソッド)
             Auth.auth().createUser(withEmail: email, password: password) { (authresult, error) in
@@ -59,6 +65,8 @@ class LoginViewController: UIViewController {
                     changeRequest.displayName = displayName
                     changeRequest.commitChanges { error in
                         if let error = error { print("表示名の登録で失敗しました。", error.localizedDescription); return }
+                        
+                        SVProgressHUD.dismiss()
                         
                         // 画面閉じる
                         self.dismiss(animated: true, completion: nil)
