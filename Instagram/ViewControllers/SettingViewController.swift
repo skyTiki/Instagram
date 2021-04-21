@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import SVProgressHUD
 
 class SettingViewController: UIViewController {
 
@@ -26,19 +25,19 @@ class SettingViewController: UIViewController {
     @IBAction func handleChangeDisplayNameButton(_ sender: Any) {
         
         guard let newDisplayName = newDisplayNameTextFiled.text else { return }
-        if newDisplayName.isEmpty { SVProgressHUD.showError(withStatus: "表示名を入力してください。"); return }
+        if newDisplayName.isEmpty { HUD.shared.showError(withStatus: "表示名を入力してください。"); return }
         
-        SVProgressHUD.show()
+        HUD.shared.show()
         if let createProfileChangeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
             createProfileChangeRequest.displayName = newDisplayName
             createProfileChangeRequest.commitChanges { error in
                 if let error = error {
-                    Common.shared.hudShowError(withStatus: "表示名の変更に失敗しました。")
+                    HUD.shared.showError(withStatus: "表示名の変更に失敗しました。")
                     print("表示名の変更失敗", error.localizedDescription)
                     return
                 }
-                SVProgressHUD.dismiss()
-                Common.shared.hudShowSuccess(withStatus: "表示名を変更しました。")
+                HUD.shared.dismiss()
+                HUD.shared.showSuccess(withStatus: "表示名を変更しました。")
                 
                 self.view.endEditing(true)
             }

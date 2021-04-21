@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A183D11B26300ACB00665501 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A183D11A26300ACB00665501 /* Common.swift */; };
+		A183D11B26300ACB00665501 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A183D11A26300ACB00665501 /* HUD.swift */; };
 		A19726252626D307008E1908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19726242626D307008E1908 /* AppDelegate.swift */; };
 		A19726272626D307008E1908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19726262626D307008E1908 /* SceneDelegate.swift */; };
 		A197262C2626D307008E1908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A197262A2626D307008E1908 /* Main.storyboard */; };
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		3D8FD50468F1D9ED41EA86CA /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		5D5EF0FC0D37A2305288A47F /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
-		A183D11A26300ACB00665501 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A183D11A26300ACB00665501 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		A19726212626D307008E1908 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19726242626D307008E1908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A19726262626D307008E1908 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		A183D11926300AB700665501 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A183D11A26300ACB00665501 /* Common.swift */,
+				A183D11A26300ACB00665501 /* HUD.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 				A1C8B3122628000C000F2212 /* TabBarController.swift in Sources */,
 				A1C8B3032627C63E000F2212 /* HomeViewController.swift in Sources */,
 				A1C8B3092627C6CA000F2212 /* PostViewController.swift in Sources */,
-				A183D11B26300ACB00665501 /* Common.swift in Sources */,
+				A183D11B26300ACB00665501 /* HUD.swift in Sources */,
 				A1C8B30C2627C6D1000F2212 /* SettingViewController.swift in Sources */,
 				A197263A2626D9EB008E1908 /* LoginViewController.swift in Sources */,
 				A19726252626D307008E1908 /* AppDelegate.swift in Sources */,
