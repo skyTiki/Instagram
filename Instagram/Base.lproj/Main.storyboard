@@ -19,7 +19,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-AA-Y0Q">
                                 <rect key="frame" x="57" y="124" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="6k9-ds-bD1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="6k9-ds-bD1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -133,10 +133,51 @@
                     <view key="view" contentMode="scaleToFill" id="0O7-U4-0Dl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新しい表示名を入力してでください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbf-ik-jsx">
+                                <rect key="frame" x="57" y="124" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Lxc-Ad-gu5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-iM-BDE">
+                                <rect key="frame" x="57" y="168" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="eXE-wU-NIZ"/>
+                                </constraints>
+                                <state key="normal" title="表示名変更" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleChangeDisplayNameButton:" destination="9lU-Ya-iW7" eventType="touchUpInside" id="ikb-ia-g1p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjC-hh-sDi">
+                                <rect key="frame" x="57" y="278" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="DLd-j8-UR8"/>
+                                </constraints>
+                                <state key="normal" title="ログアウト" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleLogoutButton:" destination="9lU-Ya-iW7" eventType="touchUpInside" id="CVS-Wh-B54"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SG8-9y-7zQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A5i-iM-BDE" firstAttribute="centerX" secondItem="0O7-U4-0Dl" secondAttribute="centerX" id="4b1-5P-AFF"/>
+                            <constraint firstItem="bbf-ik-jsx" firstAttribute="top" secondItem="SG8-9y-7zQ" secondAttribute="top" constant="80" id="6xl-pt-bln"/>
+                            <constraint firstItem="ZjC-hh-sDi" firstAttribute="centerX" secondItem="0O7-U4-0Dl" secondAttribute="centerX" id="Qwh-50-6hM"/>
+                            <constraint firstItem="A5i-iM-BDE" firstAttribute="top" secondItem="bbf-ik-jsx" secondAttribute="bottom" constant="10" id="Ucy-7r-UXR"/>
+                            <constraint firstItem="bbf-ik-jsx" firstAttribute="centerX" secondItem="0O7-U4-0Dl" secondAttribute="centerX" id="zLR-UY-qFf"/>
+                            <constraint firstItem="ZjC-hh-sDi" firstAttribute="top" secondItem="A5i-iM-BDE" secondAttribute="bottom" constant="70" id="znx-US-dfW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="設定" image="setting" id="HT9-ox-d72"/>
+                    <connections>
+                        <outlet property="newDisplayNameTextFiled" destination="bbf-ik-jsx" id="7YY-sa-Wa3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJA-6c-8pE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

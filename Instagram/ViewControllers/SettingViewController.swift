@@ -6,24 +6,58 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class SettingViewController: UIViewController {
 
+    @IBOutlet weak var newDisplayNameTextFiled: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // 現在の表示名を出力
+        if let user = Auth.auth().currentUser {
+            newDisplayNameTextFiled.text = user.displayName
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // 表示名修正
+    @IBAction func handleChangeDisplayNameButton(_ sender: Any) {
+        
+        guard let newDisplayName = newDisplayNameTextFiled.text else { return }
+        if newDisplayName.isEmpty { SVProgressHUD.showError(withStatus: "表示名を入力してください。"); return }
+        
+        SVProgressHUD.show()
+        if let createProfileChangeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
+            createProfileChangeRequest.displayName = newDisplayName
+            createProfileChangeRequest.commitChanges { error in
+                if let error = error {
+                    Common.shared.hudShowError(withStatus: "表示名の変更に失敗しました。")
+                    print("表示名の変更失敗", error.localizedDescription)
+                    return
+                }
+                SVProgressHUD.dismiss()
+                Common.shared.hudShowSuccess(withStatus: "表示名を変更しました。")
+                
+                self.view.endEditing(true)
+            }
+        }
     }
-    */
-
+    
+    // ログアウト
+    @IBAction func handleLogoutButton(_ sender: Any) {
+        try? Auth.auth().signOut()
+        
+        guard let loginVC = storyboard?.instantiateViewController(identifier: "Login") else { return }
+        present(loginVC, animated: true, completion: nil)
+        
+        // 次回ログイン時にホーム画面を選択状態にする
+        tabBarController?.selectedIndex = 0
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
