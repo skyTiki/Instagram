@@ -25,17 +25,25 @@ class LoginViewController: UIViewController {
         if let email = emailTextfield.text, let passwoerd = passwordTextField.text {
             
             // 空文字判定
-            if email.isEmpty || passwoerd.isEmpty { print("入力値に空の項目もくがありました。"); return }
+            if email.isEmpty || passwoerd.isEmpty {
+                Common.shared.hudShowError(withStatus: "入力値に空の項目があります")
+                return
+            }
             
             SVProgressHUD.show()
             
-            // サインイン（Firebase）
+            // ログイン（Firebase）
             Auth.auth().signIn(withEmail: email, password: passwoerd) { (authDataResult, error) in
                 
                 // エラー有無の判定
-                if let error = error { print("ログインでエラーが発生しました。", error.localizedDescription); return }
+                if let error = error {
+                    Common.shared.hudShowError(withStatus: "ログインに失敗しました。")
+                    print("ログインに失敗しました", error.localizedDescription)
+                    return
+                }
                 
                 SVProgressHUD.dismiss()
+                Common.shared.hudShowSuccess(withStatus: "ログインに成功しました")
                 // エラーがなければ問題ないため画面閉じる
                 self.dismiss(animated: true, completion: nil)
             }
@@ -47,14 +55,21 @@ class LoginViewController: UIViewController {
         if let email = emailTextfield.text, let password = passwordTextField.text, let displayName = displayNameTextField.text {
             
             // 空文字かどうか判定
-            if email.isEmpty || password.isEmpty || displayName.isEmpty { print("入力テキストに空文字がありました"); return }
+            if email.isEmpty || password.isEmpty || displayName.isEmpty {
+                Common.shared.hudShowError(withStatus: "入力値に空の項目があります")
+                return
+            }
             
             SVProgressHUD.show()
             
             // アカウント作成(FirebaseのCreateメソッド)
             Auth.auth().createUser(withEmail: email, password: password) { (authresult, error) in
                 // errorがあったら早期リターン
-                if let  error = error { print("アカウント作成処理で失敗しました。", error.localizedDescription); return }
+                if let  error = error {
+                    Common.shared.hudShowError(withStatus: "アカウント作成に失敗しました。\n \n　メールの形式、またはパスワード文字数が６文字以上であることを確認してください。")
+                    print("アカウント作成に失敗しました", error.localizedDescription)
+                    return
+                }
                 
                 // 表示名を設定
                 // 現在のユーザーを取得
@@ -64,10 +79,14 @@ class LoginViewController: UIViewController {
                     // 変更要求
                     changeRequest.displayName = displayName
                     changeRequest.commitChanges { error in
-                        if let error = error { print("表示名の登録で失敗しました。", error.localizedDescription); return }
+                        if let error = error {
+                            Common.shared.hudShowError(withStatus: "表示名の登録に失敗しました。")
+                            print("表示名の登録に失敗しました", error.localizedDescription)
+                            return
+                        }
                         
                         SVProgressHUD.dismiss()
-                        
+                        Common.shared.hudShowSuccess(withStatus: "アカウント作成に成功しました")
                         // 画面閉じる
                         self.dismiss(animated: true, completion: nil)
                     }
