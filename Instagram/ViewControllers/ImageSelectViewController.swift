@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CLImageEditor
 
-class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLImageEditorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +46,26 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if info[.originalImage] != nil {
             let image = info[.originalImage] as! UIImage
-            print(image)
+            
+            let editor = CLImageEditor(image: image)!
+            editor.delegate = self
+            editor.modalPresentationStyle = .fullScreen
+            picker.present(editor, animated: true, completion: nil)
         }
     }
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("cancel")
         dismiss(animated: true, completion: nil)
     }
     
+    
+    // MARK: - CLImageEditor
+    func imageEditor(_ editor: CLImageEditor!, didFinishEditingWith image: UIImage!) {
+        let postViewController = storyboard?.instantiateViewController(identifier: "Post") as! PostViewController
+        postViewController.image = image
+        editor.present(postViewController, animated: true, completion: nil)
+    }
+    func imageEditorDidCancel(_ editor: CLImageEditor!) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
