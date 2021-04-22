@@ -128,7 +128,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="9wv-VE-6ba"/>
                                 </constraints>
-                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <state key="normal" title="キャンセル" backgroundImage="btn-cancel"/>
                                 <connections>
                                     <action selector="hundleCancelButton:" destination="kZz-Mp-lwv" eventType="touchUpInside" id="kYN-WK-jdW"/>
                                 </connections>
@@ -194,11 +194,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjC-hh-sDi">
-                                <rect key="frame" x="107" y="278" width="200" height="40"/>
+                                <rect key="frame" x="57" y="278" width="300" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="DLd-j8-UR8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="DLd-j8-UR8"/>
                                 </constraints>
-                                <state key="normal" title="ログアウト" backgroundImage="btn"/>
+                                <state key="normal" title="ログアウト" backgroundImage="btn-cancel"/>
                                 <connections>
                                     <action selector="handleLogoutButton:" destination="9lU-Ya-iW7" eventType="touchUpInside" id="CVS-Wh-B54"/>
                                 </connections>
@@ -247,6 +247,7 @@
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
+        <image name="btn-cancel" width="300" height="40"/>
         <image name="camera" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="setting" width="25" height="25"/>
