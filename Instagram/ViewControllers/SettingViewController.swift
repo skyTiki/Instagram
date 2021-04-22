@@ -48,8 +48,8 @@ class SettingViewController: UIViewController {
     @IBAction func handleLogoutButton(_ sender: Any) {
         try? Auth.auth().signOut()
         
-        guard let loginVC = storyboard?.instantiateViewController(identifier: "Login") else { return }
-        present(loginVC, animated: true, completion: nil)
+        guard let loginViewController = storyboard?.instantiateViewController(identifier: "Login") else { return }
+        present(loginViewController, animated: true, completion: nil)
         
         // 次回ログイン時にホーム画面を選択状態にする
         tabBarController?.selectedIndex = 0
