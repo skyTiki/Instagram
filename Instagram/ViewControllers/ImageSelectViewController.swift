@@ -7,23 +7,52 @@
 
 import UIKit
 
-class ImageSelectViewController: UIViewController {
-
+class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    // ライブラリボタン
+    @IBAction func handleLibraryButton(_ sender: Any) {
+        presentPicker(sourceType: .photoLibrary)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // カメラボタン
+    @IBAction func handleCameraButton(_ sender: Any) {
+        presentPicker(sourceType: .camera)
     }
-    */
-
+    
+    // キャンセルボタン
+    @IBAction func hundleCancelButton(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // PickerControllerを表示する共通処理
+    private func presentPicker(sourceType: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            let pickerController = UIImagePickerController()
+            pickerController.delegate = self
+            pickerController.sourceType = sourceType
+            
+            present(pickerController, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: - UIImagePickerController
+    // 写真が選択もしくは撮影された時
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if info[.originalImage] != nil {
+            let image = info[.originalImage] as! UIImage
+            print(image)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("cancel")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
