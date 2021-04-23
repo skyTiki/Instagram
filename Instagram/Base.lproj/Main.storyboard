@@ -97,7 +97,6 @@
         <!--投稿-->
         <scene sceneID="Zdd-Pf-ORF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="98m-s8-HfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ImageSelect" id="kZz-Mp-lwv" customClass="ImageSelectViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kxt-Nf-Cg3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -148,13 +147,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="投稿" image="camera" id="Ybw-dq-z96"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98m-s8-HfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="104" y="858"/>
         </scene>
         <!--Item-->
         <scene sceneID="Qc0-i8-fbt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bps-fo-jzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Post" id="RhZ-bX-Wds" customClass="PostViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAg-n5-OAk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -213,6 +212,7 @@
                         <outlet property="titleTextField" destination="hpF-sm-yix" id="jJz-k0-zSL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bps-fo-jzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="103" y="1555"/>
         </scene>
