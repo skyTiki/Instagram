@@ -10,9 +10,7 @@ import SVProgressHUD
 
 
 class HUD {
-    static let shared = HUD()
-    
-    func showSuccess(withStatus: String?) {
+    static func showSuccess(withStatus: String?) {
         SVProgressHUD.showSuccess(withStatus: withStatus)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -20,7 +18,7 @@ class HUD {
         }
     }
     
-    func showError(withStatus: String?) {
+    static func showError(withStatus: String?) {
         SVProgressHUD.showError(withStatus: withStatus)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -29,11 +27,11 @@ class HUD {
     }
     
     // HUDをこのクラスだけで管理するため、下記メソッドもこのクラスから呼ばせる
-    func show() {
+    static func show() {
         SVProgressHUD.show()
     }
     
-    func dismiss() {
+    static func dismiss() {
         SVProgressHUD.dismiss()
     }
     

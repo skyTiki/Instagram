@@ -25,24 +25,24 @@ class LoginViewController: UIViewController {
             
             // 空文字判定
             if email.isEmpty || passwoerd.isEmpty {
-                HUD.shared.showError(withStatus: "入力値に空の項目があります")
+                HUD.showError(withStatus: "入力値に空の項目があります")
                 return
             }
             
-            HUD.shared.show()
+            HUD.show()
             
             // ログイン（Firebase）
             Auth.auth().signIn(withEmail: email, password: passwoerd) { (authDataResult, error) in
                 
                 // エラー有無の判定
                 if let error = error {
-                    HUD.shared.showError(withStatus: "ログインに失敗しました。")
+                    HUD.showError(withStatus: "ログインに失敗しました。")
                     print("ログインに失敗しました", error.localizedDescription)
                     return
                 }
                 
-                HUD.shared.dismiss()
-                HUD.shared.showSuccess(withStatus: "ログインに成功しました")
+                HUD.dismiss()
+                HUD.showSuccess(withStatus: "ログインに成功しました")
                 // エラーがなければ問題ないため画面閉じる
                 self.dismiss(animated: true, completion: nil)
             }
@@ -55,17 +55,17 @@ class LoginViewController: UIViewController {
             
             // 空文字かどうか判定
             if email.isEmpty || password.isEmpty || displayName.isEmpty {
-                HUD.shared.showError(withStatus: "入力値に空の項目があります")
+                HUD.showError(withStatus: "入力値に空の項目があります")
                 return
             }
             
-            HUD.shared.show()
+            HUD.show()
             
             // アカウント作成(FirebaseのCreateメソッド)
             Auth.auth().createUser(withEmail: email, password: password) { (authresult, error) in
                 // errorがあったら早期リターン
                 if let  error = error {
-                    HUD.shared.showError(withStatus: "アカウント作成に失敗しました。\n \n　メールの形式、またはパスワード文字数が６文字以上であることを確認してください。")
+                    HUD.showError(withStatus: "アカウント作成に失敗しました。\n \n　メールの形式、またはパスワード文字数が６文字以上であることを確認してください。")
                     print("アカウント作成に失敗しました", error.localizedDescription)
                     return
                 }
@@ -79,13 +79,13 @@ class LoginViewController: UIViewController {
                     changeRequest.displayName = displayName
                     changeRequest.commitChanges { error in
                         if let error = error {
-                            HUD.shared.showError(withStatus: "表示名の登録に失敗しました。")
+                            HUD.showError(withStatus: "表示名の登録に失敗しました。")
                             print("表示名の登録に失敗しました", error.localizedDescription)
                             return
                         }
                         
-                        HUD.shared.dismiss()
-                        HUD.shared.showSuccess(withStatus: "アカウント作成に成功しました")
+                        HUD.dismiss()
+                        HUD.showSuccess(withStatus: "アカウント作成に成功しました")
                         // 画面閉じる
                         self.dismiss(animated: true, completion: nil)
                     }

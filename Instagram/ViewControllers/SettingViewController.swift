@@ -25,19 +25,19 @@ class SettingViewController: UIViewController {
     @IBAction func handleChangeDisplayNameButton(_ sender: Any) {
         
         guard let newDisplayName = newDisplayNameTextFiled.text else { return }
-        if newDisplayName.isEmpty { HUD.shared.showError(withStatus: "表示名を入力してください。"); return }
+        if newDisplayName.isEmpty { HUD.showError(withStatus: "表示名を入力してください。"); return }
         
-        HUD.shared.show()
+        HUD.show()
         if let createProfileChangeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
             createProfileChangeRequest.displayName = newDisplayName
             createProfileChangeRequest.commitChanges { error in
                 if let error = error {
-                    HUD.shared.showError(withStatus: "表示名の変更に失敗しました。")
+                    HUD.showError(withStatus: "表示名の変更に失敗しました。")
                     print("表示名の変更失敗", error.localizedDescription)
                     return
                 }
-                HUD.shared.dismiss()
-                HUD.shared.showSuccess(withStatus: "表示名を変更しました。")
+                HUD.dismiss()
+                HUD.showSuccess(withStatus: "表示名を変更しました。")
                 
                 self.view.endEditing(true)
             }
