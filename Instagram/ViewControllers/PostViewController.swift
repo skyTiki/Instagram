@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class PostViewController: UIViewController {
-
+    
     var image: UIImage!
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -17,7 +17,7 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imageView.image = image
     }
     

@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class SettingViewController: UIViewController {
-
+    
     @IBOutlet weak var newDisplayNameTextFiled: UITextField!
     
     override func viewDidLoad() {
