@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A14A1CD3263147F6009CE24C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A1CD2263147F6009CE24C /* Const.swift */; };
 		A14A1CD72637A244009CE24C /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A1CD62637A244009CE24C /* PostData.swift */; };
+		A14A1CDD2637A42A009CE24C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A1CDB2637A42A009CE24C /* PostTableViewCell.swift */; };
+		A14A1CDE2637A42A009CE24C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14A1CDC2637A42A009CE24C /* PostTableViewCell.xib */; };
 		A183D11B26300ACB00665501 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A183D11A26300ACB00665501 /* HUD.swift */; };
 		A19726252626D307008E1908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19726242626D307008E1908 /* AppDelegate.swift */; };
 		A19726272626D307008E1908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19726262626D307008E1908 /* SceneDelegate.swift */; };
@@ -30,6 +32,8 @@
 		5D5EF0FC0D37A2305288A47F /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		A14A1CD2263147F6009CE24C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		A14A1CD62637A244009CE24C /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		A14A1CDB2637A42A009CE24C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		A14A1CDC2637A42A009CE24C /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		A183D11A26300ACB00665501 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		A19726212626D307008E1908 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19726242626D307008E1908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A14A1CDA2637A405009CE24C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A14A1CDB2637A42A009CE24C /* PostTableViewCell.swift */,
+				A14A1CDC2637A42A009CE24C /* PostTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A183D11926300AB700665501 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 				A14A1CD52637A22E009CE24C /* Models */,
 				A183D11926300AB700665501 /* Common */,
 				A1C8B30E2627C6D6000F2212 /* ViewControllers */,
+				A14A1CDA2637A405009CE24C /* Views */,
 				A197262A2626D307008E1908 /* Main.storyboard */,
 				A197262D2626D309008E1908 /* Assets.xcassets */,
 				A197262F2626D309008E1908 /* LaunchScreen.storyboard */,
@@ -202,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19726312626D309008E1908 /* LaunchScreen.storyboard in Resources */,
+				A14A1CDE2637A42A009CE24C /* PostTableViewCell.xib in Resources */,
 				A1C8B31A26296500000F2212 /* GoogleService-Info.plist in Resources */,
 				A197262E2626D309008E1908 /* Assets.xcassets in Resources */,
 				A197262C2626D307008E1908 /* Main.storyboard in Resources */,
@@ -268,6 +283,7 @@
 				A19726272626D307008E1908 /* SceneDelegate.swift in Sources */,
 				A14A1CD72637A244009CE24C /* PostData.swift in Sources */,
 				A14A1CD3263147F6009CE24C /* Const.swift in Sources */,
+				A14A1CDD2637A42A009CE24C /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
