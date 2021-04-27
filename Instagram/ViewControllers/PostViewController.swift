@@ -26,7 +26,7 @@ class PostViewController: UIViewController {
         let jpegImage = image.jpegData(compressionQuality: 0.75)!
         // 画像と投稿のデータ格納先を定義
         let postRef = Firestore.firestore().collection(Const.PostPath).document()
-        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + "jpg")
+        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + ".jpg")
         
         // HUD
         HUD.show()
