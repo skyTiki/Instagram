@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
             
             // 空文字判定
             if email.isEmpty || passwoerd.isEmpty {
-                HUD.showError(withStatus: "入力値に空の項目があります")
+                HUD.showError(withStatus: "入力項目に空の項目があります")
                 return
             }
             
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
             
             // 空文字かどうか判定
             if email.isEmpty || password.isEmpty || displayName.isEmpty {
-                HUD.showError(withStatus: "入力値に空の項目があります")
+                HUD.showError(withStatus: "入力項目に空の項目があります")
                 return
             }
             
