@@ -66,6 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        cell.commentButton.addTarget(self, action: #selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
         return cell
     }
     
@@ -95,5 +96,38 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             postRef.updateData(["likes" : updateValue])
             
         }
+    }
+    
+    // コメント入力ボタン
+    @objc func handleCommentButton(_ sender: UIButton, forEvent event: UIEvent) {
+        
+        // セルの特定
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: point)!
+        
+        let cell = tableView.cellForRow(at: indexPath) as! PostTableViewCell
+        
+        guard let commentContent = cell.commentTextField.text else { return }
+        
+        HUD.show()
+        
+        let commentRef = Firestore.firestore().collection(Const.CommentPath).document()
+        
+        guard let userName = Auth.auth().currentUser?.displayName else { return }
+        
+        let comment = [
+            "id" : postArray[indexPath.row].id,
+            "name" : userName,
+            "content" : commentContent
+        ]
+        
+        commentRef.setData(comment)
+        
+        cell.commentTextField.text = ""
+        cell.commentTextField.endEditing(true)
+        
+        HUD.showSuccess(withStatus: "コメントの投稿に成功しました")
+        
     }
 }

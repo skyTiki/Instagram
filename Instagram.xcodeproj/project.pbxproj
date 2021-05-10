@@ -12,6 +12,9 @@
 		A14A1CDD2637A42A009CE24C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A1CDB2637A42A009CE24C /* PostTableViewCell.swift */; };
 		A14A1CDE2637A42A009CE24C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14A1CDC2637A42A009CE24C /* PostTableViewCell.xib */; };
 		A183D11B26300ACB00665501 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A183D11A26300ACB00665501 /* HUD.swift */; };
+		A19077092648EEC000753A71 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19077082648EEC000753A71 /* Comment.swift */; };
+		A190770D2648EFDB00753A71 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190770B2648EFDB00753A71 /* CommentTableViewCell.swift */; };
+		A190770E2648EFDB00753A71 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A190770C2648EFDB00753A71 /* CommentTableViewCell.xib */; };
 		A19726252626D307008E1908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19726242626D307008E1908 /* AppDelegate.swift */; };
 		A19726272626D307008E1908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19726262626D307008E1908 /* SceneDelegate.swift */; };
 		A197262C2626D307008E1908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A197262A2626D307008E1908 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 		A14A1CDB2637A42A009CE24C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		A14A1CDC2637A42A009CE24C /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		A183D11A26300ACB00665501 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		A19077082648EEC000753A71 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A190770B2648EFDB00753A71 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A190770C2648EFDB00753A71 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		A19726212626D307008E1908 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19726242626D307008E1908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A19726262626D307008E1908 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				A14A1CD62637A244009CE24C /* PostData.swift */,
+				A19077082648EEC000753A71 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,6 +92,8 @@
 			children = (
 				A14A1CDB2637A42A009CE24C /* PostTableViewCell.swift */,
 				A14A1CDC2637A42A009CE24C /* PostTableViewCell.xib */,
+				A190770B2648EFDB00753A71 /* CommentTableViewCell.swift */,
+				A190770C2648EFDB00753A71 /* CommentTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19726312626D309008E1908 /* LaunchScreen.storyboard in Resources */,
+				A190770E2648EFDB00753A71 /* CommentTableViewCell.xib in Resources */,
 				A14A1CDE2637A42A009CE24C /* PostTableViewCell.xib in Resources */,
 				A1C8B31A26296500000F2212 /* GoogleService-Info.plist in Resources */,
 				A197262E2626D309008E1908 /* Assets.xcassets in Resources */,
@@ -280,8 +290,10 @@
 				A1C8B30C2627C6D1000F2212 /* SettingViewController.swift in Sources */,
 				A197263A2626D9EB008E1908 /* LoginViewController.swift in Sources */,
 				A19726252626D307008E1908 /* AppDelegate.swift in Sources */,
+				A19077092648EEC000753A71 /* Comment.swift in Sources */,
 				A19726272626D307008E1908 /* SceneDelegate.swift in Sources */,
 				A14A1CD72637A244009CE24C /* PostData.swift in Sources */,
+				A190770D2648EFDB00753A71 /* CommentTableViewCell.swift in Sources */,
 				A14A1CD3263147F6009CE24C /* Const.swift in Sources */,
 				A14A1CDD2637A42A009CE24C /* PostTableViewCell.swift in Sources */,
 			);
