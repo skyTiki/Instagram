@@ -34,8 +34,9 @@ class PostData {
         
         if let myid = Auth.auth().currentUser?.uid {
             // likesの中に自分のidが含まれている場合（いいねしているかどうか）
-            if self.likes.firstIndex(of: myid) != nil {
+            if self.likes.contains(myid) {
                 self.isLiked = true
+                print("contains 判定True")
             }
         }
         
