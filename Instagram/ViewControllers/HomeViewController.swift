@@ -65,7 +65,35 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
-        
+        cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
+        
+        // タップ場所からテーブルのIndexPath取得
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)!
+        
+        
+        let postData = postArray[indexPath.row]
+        
+        // 更新処理
+        if let myId = Auth.auth().currentUser?.uid {
+            // 更新用のデータ
+            var updateValue: FieldValue
+            
+            // すでにいいねしているかどうか判定
+            if postData.isLiked {
+                updateValue = FieldValue.arrayRemove([myId])
+            } else {
+                updateValue = FieldValue.arrayUnion([myId])
+            }
+            
+            let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+            postRef.updateData(["likes" : updateValue])
+            
+        }
     }
 }
