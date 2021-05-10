@@ -12,6 +12,7 @@ class Comment {
     var id: String
     var content: String?
     var name: String?
+    var date: Date?
     
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
@@ -19,5 +20,8 @@ class Comment {
         let commentDic = document.data()
         self.name = commentDic["name"] as? String
         self.content = commentDic["content"] as? String
+        
+        let timestamp = commentDic["date"] as? Timestamp
+        self.date = timestamp?.dateValue()
     }
 }

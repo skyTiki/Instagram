@@ -119,8 +119,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let comment = [
             "id" : postArray[indexPath.row].id,
             "name" : userName,
-            "content" : commentContent
-        ]
+            "content" : commentContent,
+            "date" : FieldValue.serverTimestamp()
+        ] as [String : Any]
         
         commentRef.setData(comment)
         
