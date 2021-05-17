@@ -109,21 +109,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.cellForRow(at: indexPath) as! PostTableViewCell
         
         guard let commentContent = cell.commentTextField.text else { return }
+        guard let userName = Auth.auth().currentUser?.displayName else { return }
+        
+        let updateData: [String] = [userName + " : " + commentContent]
         
         HUD.show()
         
-        let commentRef = Firestore.firestore().collection(Const.CommentPath).document()
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(postArray[indexPath.row].id)
         
-        guard let userName = Auth.auth().currentUser?.displayName else { return }
-        
-        let comment = [
-            "id" : postArray[indexPath.row].id,
-            "name" : userName,
-            "content" : commentContent,
-            "date" : FieldValue.serverTimestamp()
-        ] as [String : Any]
-        
-        commentRef.setData(comment)
+        postRef.setData(["comments" : FieldValue.arrayUnion(updateData)], merge: true)
         
         cell.commentTextField.text = ""
         cell.commentTextField.endEditing(true)

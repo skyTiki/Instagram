@@ -15,6 +15,7 @@ class PostData {
     var date: Date?
     var likes: [String] = []
     var isLiked: Bool = false
+    var comments: [String]? = []
     
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
@@ -38,6 +39,8 @@ class PostData {
                 self.isLiked = true
             }
         }
+        
+        self.comments = postDic["comments"] as? [String]
         
     }
 }

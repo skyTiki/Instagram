@@ -14,11 +14,11 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentTextField: UITextField!
-    
-    var commentDataList: [Comment]?
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +37,8 @@ class PostTableViewCell: UITableViewCell {
         postImageView.sd_setImage(with: imageRef)
         
         // 説明
-        captionLabel.text = "\(postData.name!) : \(postData.caption!)"
+        userLabel.text = postData.name!
+        captionLabel.text = postData.caption!
         
         // 日付
         dateLabel.text = ""
@@ -60,7 +61,15 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        
+        var comment = ""
+        
+        postData.comments?.forEach({
+            comment.append($0 + "\n")
+        })
+        
+        commentLabel.text = comment
+        
     }
-    
 }
 
