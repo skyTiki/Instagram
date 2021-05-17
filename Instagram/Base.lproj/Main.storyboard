@@ -166,6 +166,35 @@
             </objects>
             <point key="canvasLocation" x="104" y="858"/>
         </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="AMK-BF-sta">
+            <objects>
+                <viewController id="VT8-Ep-IUu" customClass="ImageDetailViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qe4-XR-agW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ni-Ha-esL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="syf-yO-pF3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1ni-Ha-esL" firstAttribute="leading" secondItem="syf-yO-pF3" secondAttribute="leading" id="74Y-8t-5Pi"/>
+                            <constraint firstItem="syf-yO-pF3" firstAttribute="bottom" secondItem="1ni-Ha-esL" secondAttribute="bottom" id="JQu-iP-gRj"/>
+                            <constraint firstItem="syf-yO-pF3" firstAttribute="trailing" secondItem="1ni-Ha-esL" secondAttribute="trailing" id="Vhh-ax-MLK"/>
+                            <constraint firstItem="1ni-Ha-esL" firstAttribute="top" secondItem="syf-yO-pF3" secondAttribute="top" id="Xy1-fd-NW5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="1ni-Ha-esL" id="qjR-Xj-0if"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOv-T4-ktW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-763" y="1607"/>
+        </scene>
         <!--Item-->
         <scene sceneID="Qc0-i8-fbt">
             <objects>

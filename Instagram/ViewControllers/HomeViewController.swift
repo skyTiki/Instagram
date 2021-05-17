@@ -67,6 +67,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.setPostData(postArray[indexPath.row])
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
         cell.commentButton.addTarget(self, action: #selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
+        cell.postImageView.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(handleImageView(forEvent:))))
         return cell
     }
     
@@ -123,6 +124,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.commentTextField.endEditing(true)
         
         HUD.showSuccess(withStatus: "コメントの投稿に成功しました")
+        
+    }
+    
+    // 画像タップボタン
+    @objc func handleImageView(forEvent event: UIEvent) {
+        
+        // セルの特定
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: point)!
+        
+        let detailViewController = storyboard?.instantiateViewController(identifier: "ImageDetailViewController") as! ImageDetailViewController
+        detailViewController.postId = postArray[indexPath.row].id
+        present(detailViewController, animated: true, completion: nil)
         
     }
 }

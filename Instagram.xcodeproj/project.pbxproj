@@ -24,6 +24,7 @@
 		A1C8B30C2627C6D1000F2212 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8B30B2627C6D1000F2212 /* SettingViewController.swift */; };
 		A1C8B3122628000C000F2212 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8B3112628000C000F2212 /* TabBarController.swift */; };
 		A1C8B31A26296500000F2212 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C8B31926296500000F2212 /* GoogleService-Info.plist */; };
+		A1DB2A9926520B9F0032536E /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DB2A9826520B9F0032536E /* ImageDetailViewController.swift */; };
 		BD013BD2C7CDBD4B97DDB790 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784E960559BF3809B458CAC /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		A1C8B30B2627C6D1000F2212 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A1C8B3112628000C000F2212 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Instagram/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		A1C8B31926296500000F2212 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A1DB2A9826520B9F0032536E /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		A784E960559BF3809B458CAC /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				A1C8B30B2627C6D1000F2212 /* SettingViewController.swift */,
 				A19726392626D9EB008E1908 /* LoginViewController.swift */,
 				A1C8B3082627C6CA000F2212 /* PostViewController.swift */,
+				A1DB2A9826520B9F0032536E /* ImageDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1C8B3062627C64C000F2212 /* ImageSelectViewController.swift in Sources */,
+				A1DB2A9926520B9F0032536E /* ImageDetailViewController.swift in Sources */,
 				A1C8B3122628000C000F2212 /* TabBarController.swift in Sources */,
 				A1C8B3032627C63E000F2212 /* HomeViewController.swift in Sources */,
 				A1C8B3092627C6CA000F2212 /* PostViewController.swift in Sources */,
