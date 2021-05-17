@@ -15,7 +15,6 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-    @IBOutlet weak var commentTableView: UITableView!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentTextField: UITextField!
     
@@ -23,11 +22,7 @@ class PostTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        commentTableView.delegate = self
         
-        
-        let nib = UINib(nibName: "CommentTableViewCell", bundle: nil)
-        commentTableView.register(nib, forCellReuseIdentifier: "Cell")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -69,18 +64,3 @@ class PostTableViewCell: UITableViewCell {
     
 }
 
-extension PostTableViewCell: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentDataList?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let commentCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CommentTableViewCell
-        guard let commentDataList = commentDataList else { return commentCell }
-        commentCell.nameLabel.text = commentDataList[indexPath.row].name
-        commentCell.contentLabel.text = commentDataList[indexPath.row].content
-        
-        return commentCell
-    }
-}
