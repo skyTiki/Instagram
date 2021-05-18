@@ -166,6 +166,43 @@
             </objects>
             <point key="canvasLocation" x="104" y="858"/>
         </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="AMK-BF-sta">
+            <objects>
+                <viewController storyboardIdentifier="ImageDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VT8-Ep-IUu" customClass="ImageDetailViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qe4-XR-agW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EzE-4b-SXt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ni-Ha-esL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="syf-yO-pF3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EzE-4b-SXt" firstAttribute="trailing" secondItem="1ni-Ha-esL" secondAttribute="trailing" id="7YN-97-VRz"/>
+                            <constraint firstAttribute="bottom" secondItem="EzE-4b-SXt" secondAttribute="bottom" id="JHu-gw-G8p"/>
+                            <constraint firstItem="EzE-4b-SXt" firstAttribute="leading" secondItem="qe4-XR-agW" secondAttribute="leading" id="Xvk-cI-TCu"/>
+                            <constraint firstAttribute="trailing" secondItem="EzE-4b-SXt" secondAttribute="trailing" id="ZNC-dz-wSs"/>
+                            <constraint firstItem="1ni-Ha-esL" firstAttribute="top" secondItem="syf-yO-pF3" secondAttribute="top" id="dgr-YP-4Qr"/>
+                            <constraint firstItem="1ni-Ha-esL" firstAttribute="leading" secondItem="syf-yO-pF3" secondAttribute="leading" id="mzz-nx-Kuo"/>
+                            <constraint firstItem="EzE-4b-SXt" firstAttribute="top" secondItem="qe4-XR-agW" secondAttribute="top" id="uKg-ve-acI"/>
+                            <constraint firstItem="syf-yO-pF3" firstAttribute="bottom" secondItem="1ni-Ha-esL" secondAttribute="bottom" id="uad-tG-ChI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="1ni-Ha-esL" id="qjR-Xj-0if"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOv-T4-ktW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762.31884057971024" y="1568.9732142857142"/>
+        </scene>
         <!--Item-->
         <scene sceneID="Qc0-i8-fbt">
             <objects>

@@ -39,7 +39,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M5V-ic-o7M">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M5V-ic-o7M">
                         <rect key="frame" x="20" y="10" width="295" height="295"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="M5V-ic-o7M" secondAttribute="height" multiplier="1:1" id="Wjy-5q-cFn"/>
