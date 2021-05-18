@@ -68,7 +68,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
         cell.commentButton.addTarget(self, action: #selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
         cell.postImageView.isUserInteractionEnabled = true
-        cell.postImageView.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(handleImageView(_:forEvent:))))
+        cell.postImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleImageView(_:forEvent:))))
         return cell
     }
     
@@ -132,11 +132,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func handleImageView(_ sender: UITapGestureRecognizer, forEvent event: UIEvent) {
         
         // セルの特定
-        let touch = event.allTouches?.first
-        let point = touch!.location(in: self.tableView)
-        let indexPath = self.tableView.indexPathForRow(at: point)!
+        let touch = sender.location(in: tableView)
+        let indexPath = self.tableView.indexPathForRow(at: touch)!
         
-        let detailViewController = storyboard?.instantiateViewController(identifier: "ImageDetailViewController") as! ImageDetailViewController
+        let detailViewController = storyboard?.instantiateViewController(identifier: "ImageDetail") as! ImageDetailViewController
         detailViewController.postId = postArray[indexPath.row].id
         present(detailViewController, animated: true, completion: nil)
         
