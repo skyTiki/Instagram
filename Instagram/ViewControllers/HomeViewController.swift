@@ -67,7 +67,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.setPostData(postArray[indexPath.row])
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
         cell.commentButton.addTarget(self, action: #selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
-        cell.postImageView.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(handleImageView(forEvent:))))
+        cell.postImageView.isUserInteractionEnabled = true
+        cell.postImageView.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(handleImageView(_:forEvent:))))
         return cell
     }
     
@@ -128,7 +129,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // 画像タップボタン
-    @objc func handleImageView(forEvent event: UIEvent) {
+    @objc func handleImageView(_ sender: UITapGestureRecognizer, forEvent event: UIEvent) {
         
         // セルの特定
         let touch = event.allTouches?.first
